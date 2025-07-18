@@ -4,6 +4,7 @@ SecureAccess is an access control system that allows users to send encrypted acc
 #### Secure Document Format Design
 
 Proposed Encrypted Document Structure:
+```JSON
 {
   "id": 123,
   "access_code": "Base64-Encoded-Secret-Encrypted-Code",
@@ -12,6 +13,7 @@ Proposed Encrypted Document Structure:
   "IV": "Base64-Encoded-PubKey-Encrypted-IV",
   "MAC": "Base64-Encoded-MAC"
 }
+```
 
 The structure of the secure document follows the hybrid encryption model. The secret field represents the symmetric key used to encrypt the message content, which is itself encrypted with the server's public key.
 ### Protection Needs
@@ -23,4 +25,6 @@ The secure document must guarantee the integrity and confidentiality of the data
 
 #### Structural Diagram
 
-![[structural_diagram.png]]This proposal delineates a fundamental and secure access control system, wherein communication is safeguarded through robust cryptographic protocols and a firewall configured to ensure the integrity, confidentiality, and authenticity of communications.
+![Structural Diagram](img/structural_diagram.png)
+
+This proposal delineates a fundamental and secure access control system, wherein communication is safeguarded through robust cryptographic protocols and a firewall configured to ensure the integrity, confidentiality, and authenticity of communications.
